@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlanetInfoScript : MonoBehaviour
 {
     float _rotationAngle;
-    public PlanetTurnSunScript _planetTurnSelfScript;
+    public MovedOnBezier _movedOnBezier;
     private int turnCount = 0;
     void Update()
     {
@@ -15,11 +15,10 @@ public class PlanetInfoScript : MonoBehaviour
     //One revolution around the sun
     void WritePlanetTurn()
     {                       
-        _rotationAngle += _planetTurnSelfScript.turnAroundSpeed  * Time.deltaTime;
-        
-        if(_rotationAngle >= 360)
+        _rotationAngle += _movedOnBezier._speedCoef * Time.deltaTime;         
+        if(_rotationAngle >= 2)
         {
-             turnCount++;
+            turnCount++;
             Debug.Log($"{gameObject.name} turned a round! Turn count: " + turnCount);           
             _rotationAngle=0;
         }
