@@ -14,8 +14,8 @@ public class PlanetClickWithCanvas : MonoBehaviour, IClickable , IPanelOpener
 
     void Start ()
     {
-        Button closeBtn = closeButton.GetComponent<Button>();
-		closeBtn.onClick.AddListener(CloseOnClick);
+        //Button closeBtn = closeButton.GetComponent<Button>();
+		closeButton.onClick.AddListener(CloseOnClick);
     }    
 
     void Update()
@@ -45,10 +45,10 @@ public class PlanetClickWithCanvas : MonoBehaviour, IClickable , IPanelOpener
 
     public void Click()
     {
-        OpenText();     
+        OpenPanel();     
     }
 
-    public void OpenText()
+    public void OpenPanel()
     {
         if(_text != null)
         {
