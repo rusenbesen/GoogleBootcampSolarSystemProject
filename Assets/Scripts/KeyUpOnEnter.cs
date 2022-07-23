@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class KeyUpOnEnter : MonoBehaviour
 {    
-    public GameObject meteorCanvas;
+    public GameObject meteorObject;
 
     void Update()
     {
         if(Input.GetKeyUp(KeyCode.Space))
         {
-            Instantiate(meteorCanvas); 
+            Instantiate(meteorObject); 
         }
     }
 }

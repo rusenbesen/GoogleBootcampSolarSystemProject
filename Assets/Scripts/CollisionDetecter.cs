@@ -7,7 +7,7 @@ public class CollisionDetecter : MonoBehaviour
    private void OnCollisionEnter(Collision other) 
    {
         ParticleSystem.ShapeModule _editableShape = _particleSystem.shape;
-        //_editableShape.rotation  = other.gameObject.GetComponent<Collider>().transform.rotation;
+        //_editableShape.position  = other.gameObject.GetComponent<Collider>().transform.position;
         _particleSystem.Play();
         Destroy(other.gameObject);
    }
